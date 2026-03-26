@@ -2,10 +2,13 @@ pipeline{
     agent any
     stages{
         stage('Build') {
-            echo ''
-            sh 'pnpm build'
+            steps{
+                echo 'Building the project...'
+                sh 'pnpm build'
+            }
         }
         stage('Deploy') {
+            echo 'Deploying the project...'
             sh 'pnpm start'
         }
     }
