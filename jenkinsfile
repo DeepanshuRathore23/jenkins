@@ -1,0 +1,12 @@
+pipeline{
+    agent any
+    stages{
+        stage('Build') {
+            echo ''
+            sh 'pnpm build'
+        }
+        stage('Deploy') {
+            sh 'pnpm start'
+        }
+    }
+}
