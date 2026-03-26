@@ -4,6 +4,7 @@ pipeline{
         stage('Build') {
             steps{
                 echo 'Building the project...'
+                sh 'npm install -g pnpm'
                 sh 'pnpm install'
                 sh 'pnpm build'
             }
