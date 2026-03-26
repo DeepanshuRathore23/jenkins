@@ -8,8 +8,11 @@ pipeline{
             }
         }
         stage('Deploy') {
-            echo 'Deploying the project...'
-            sh 'pnpm start'
+            steps{
+                echo 'Deploying the project...'
+                sh 'pnpm start'
+            }
+            
         }
     }
 }
